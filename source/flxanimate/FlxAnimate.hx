@@ -227,7 +227,6 @@ class FlxAnimate extends FlxSprite
 					firstframe = firstFrame - frame.index;
 				}
 				var coloreffect = new ColorTransform();
-				coloreffect.concat(frame._colorEffect);
 				coloreffect.concat(colorEffect);
 				parseElement(element, firstframe, matrix, coloreffect);
 			}
@@ -421,8 +420,6 @@ class FlxAnimate extends FlxSprite
 				anim.reversed = Settings.Reversed;
 			if (Settings.FrameRate != null)
 				anim.framerate = (Settings.FrameRate > 0) ? anim.metadata.frameRate : Settings.FrameRate;
-			if (Settings.OnComplete != null)
-				anim.onComplete = Settings.OnComplete;
 			if (Settings.ShowPivot != null)
 				showPivot = Settings.ShowPivot;
 			if (Settings.Antialiasing != null)
